@@ -3,18 +3,18 @@
     <groupId>xyz.rogfam</groupId>
     <artifactId>littleproxy</artifactId>
     <packaging>jar</packaging>
-    <version>2.0.8-SNAPSHOT</version>
+    <version>2.0.8</version>
     <name>LittleProxy</name>
     <description>
         LittleProxy is a high performance HTTP proxy written in Java and using the Netty networking framework.
     </description>
-    <url>https://github.com/mrog/LittleProxy</url>
+    <url>https://github.com/LittleProxy/LittleProxy</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <github.global.server>github</github.global.server>
-        <netty.version>4.1.76.Final</netty.version>
+        <netty.version>4.1.77.Final</netty.version>
         <slf4j.version>1.7.36</slf4j.version>
         <java.version>1.8</java.version>
     </properties>
@@ -22,19 +22,19 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
         </license>
     </licenses>
 
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/mrog/LittleProxy/issues</url>
+        <url>https://github.com/LittleProxy/LittleProxy/issues</url>
     </issueManagement>
 
     <scm>
-        <connection>scm:git:https://github.com/mrog/LittleProxy.git</connection>
-        <developerConnection>scm:git:git@github.com:mrog/LittleProxy.git</developerConnection>
-        <url>scm:git:https://github.com/mrog/LittleProxy</url>
+        <connection>scm:git:https://github.com/LittleProxy/LittleProxy.git</connection>
+        <developerConnection>scm:git:git@github.com:LittleProxy/LittleProxy.git</developerConnection>
+        <url>scm:git:https://github.com/LittleProxy/LittleProxy</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -284,7 +284,7 @@
 
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
+            <artifactId>slf4j-reload4j</artifactId>
             <version>${slf4j.version}</version>
             <optional>true</optional>
         </dependency>
@@ -308,7 +308,7 @@
     <dependencyManagement>
         <dependencies>
             <!-- Manage the version of all netty libraries included in netty-all. This prevents maven from pulling multiple netty versions
-                 onto the compile and test classpaths if transitive dependencies also use netty but declare specific dependencies, rather
+                 onto compile and test classpath if transitive dependencies also use netty but declare specific dependencies, rather
                  than using netty-all as we do. -->
             <dependency>
                 <groupId>io.netty</groupId>
@@ -508,7 +508,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.6</version>
+                    <version>3.0.1</version>
                 </plugin>
 
                 <plugin>
@@ -742,6 +742,15 @@
             <organizationUrl>https://github.com/mrog</organizationUrl>
             <roles><role>Developer</role></roles>
             <timezone>-7</timezone>
+        </developer>
+        <developer>
+            <id>asolntsev</id>
+            <name>Andrei Solntsev</name>
+            <email>andrei.solntsev+littleproxy@gmail.com</email>
+            <organization>LittleProxy</organization>
+            <organizationUrl>https://github.com/LittleProxy</organizationUrl>
+            <roles><role>Maintainer</role></roles>
+            <timezone>+3</timezone>
         </developer>
     </developers>
 </project>
