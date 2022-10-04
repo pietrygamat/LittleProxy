@@ -7,24 +7,31 @@ on:
   push:
     branches: [ master ]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    env:
+      MAVEN_OPTS: -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        java: ['8', '11', '17']
+        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
     steps:
       - uses: actions/checkout@v3
-      - name: Set up JDK 11
+      - name: Set up JDK ${{ matrix.java }}
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: ${{ matrix.java }}
           distribution: 'temurin'
           cache: maven
       - name: Compile code
         run: mvn --batch-mode compile
       - name: Run tests
         run: mvn --batch-mode package -Psmoke-test
+        timeout-minutes: 10
       - name: Generate Maven test report
         if: failure()
         run: mvn --batch-mode surefire-report:report-only
