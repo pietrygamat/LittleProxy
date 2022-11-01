@@ -30,7 +30,7 @@ jobs:
       - name: Compile code
         run: mvn --batch-mode compile
       - name: Run tests
-        run: mvn --batch-mode package -Psmoke-test
+        run: mvn --batch-mode install
         timeout-minutes: 10
       - name: Generate Maven test report
         if: failure()
