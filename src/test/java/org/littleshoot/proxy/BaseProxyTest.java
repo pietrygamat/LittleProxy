@@ -46,12 +46,9 @@ public abstract class BaseProxyTest extends AbstractProxyTest {
     @Test
     public void testProxyWithBadAddress()
             throws Exception {
-        // This test used to try connecting to "test.localhost" and that worked for local builds, but resulted in
-        // the wrong error (405 instead of 502) on the build server due to nginx.  So, switched it to localhost:17,
-        // which should work as long as there's not a web server running on the QOTD port.
+        // RFC6761 section 6.4 guarantees the .invalid address does not exist and is always a bad gateway.
         ResponseInfo response =
-                httpPostWithApacheClient(new HttpHost("localhost", 17),
-                        DEFAULT_RESOURCE, true);
+                httpPostWithApacheClient(new HttpHost("address.invalid"), DEFAULT_RESOURCE, true);
         assertReceivedBadGateway(response);
     }
 
