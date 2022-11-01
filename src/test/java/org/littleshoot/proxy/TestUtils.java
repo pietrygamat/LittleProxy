@@ -39,7 +39,7 @@ import static org.junit.Assume.assumeTrue;
 
 public class TestUtils {
 
-    public static final RequestConfig REQUEST_TIMEOUT_CONFIG = RequestConfig.custom().setConnectTimeout(5000).build();
+    public static final RequestConfig REQUEST_TIMEOUT_CONFIG = RequestConfig.custom().setConnectTimeout(60000).build();
 
     private TestUtils() {
     }
