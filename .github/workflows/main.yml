@@ -27,8 +27,13 @@ jobs:
           cache: maven
       - name: Compile code
         run: mvn --batch-mode compile
-      - name: Run tests
+      - name: Branch name [env]
+        run: echo running on branch ${GITHUB_REF##*/}
+      - name: Run smoke tests
         run: mvn --batch-mode package -Psmoke-test
+      - name: Run slow tests
+        if: success()
+        run: mvn --batch-mode package -Pslow-tests
       - name: Generate Maven test report
         if: failure()
         run: mvn --batch-mode surefire-report:report-only
