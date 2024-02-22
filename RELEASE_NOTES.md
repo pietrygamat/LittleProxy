@@ -1,7 +1,11 @@
 # Release Notes
 
-- 2.1.3 (in progress, https://github.com/LittleProxy/LittleProxy/milestone/31?closed=1)
+- 2.2.0 (22.02.2024, https://github.com/LittleProxy/LittleProxy/milestone/31?closed=1)
+  - Move the project from groupId "xyz.rogfam" to "io.github.littleproxy"
   - Migrate from JUnit4/Hamcrest to JUnit5/AssertJ (#373)
+  - Bump Netty from 4.1.106.Final to 4.1.107.Final (#376)
+  - Bump Selenium from 4.17.0 to 4.18.1 (#378) (#379)
+  - Bump log4j from 2.22.1 to 2.23.0 (#381)
 
 - 2.1.2 (07.02.2024, https://github.com/LittleProxy/LittleProxy/milestone/30?closed=1)
   - Refactoring & code cleanup & setup IDEA inspections (#370) (#371)
