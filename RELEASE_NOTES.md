@@ -1,5 +1,13 @@
 # Release Notes
 
+- 2.2.1 (25.04.2024, https://github.com/LittleProxy/LittleProxy/milestone/32?closed=1)
+  - Bump Netty from 4.1.107.Final to 4.1.109.Final
+  - Bump Selenium from 4.18.1 to 4.20.0
+  - Bump Jackson from 2.16.1 to 2.17.0
+  - Bump Slf4j from 2.0.12 to 2.0.13
+  - Bump Log4j from 2.23.0 to 2.23.1
+  - Bump Guava from 33.0.0-jre to 33.1.0-jre
+
 - 2.2.0 (22.02.2024, https://github.com/LittleProxy/LittleProxy/milestone/31?closed=1)
   - Move the project from groupId "xyz.rogfam" to "io.github.littleproxy"
   - Migrate from JUnit4/Hamcrest to JUnit5/AssertJ (#373)
