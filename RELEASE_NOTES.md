@@ -1,7 +1,11 @@
 # Release Notes
 
-- 2.2.3 (??.08.2024, https://github.com/LittleProxy/LittleProxy/milestone/34)
+- 2.2.4 (??.08.2024, https://github.com/LittleProxy/LittleProxy/milestone/35)
   - ...
+
+- 2.2.3 (21.06.2024, https://github.com/LittleProxy/LittleProxy/milestone/34?closed=1)
+  - Bump selenium from 4.21.0 to 4.22.0 (#433)
+  - #37 fix ClassCastException: "PooledUnsafeDirectByteBuf cannot be cast to HttpObject" (#434)
 
 - 2.2.2 (12.06.2024, https://github.com/LittleProxy/LittleProxy/milestone/33?closed=1)
   - Bump selenium from 4.20.0 to 4.21.0
